@@ -1,0 +1,10 @@
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+[user]
+	name = Dmitriy Shabat
+	email = mitya.shabat@gmail.com
+[core]
+	editor = vim
