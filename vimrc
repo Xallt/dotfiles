@@ -12,3 +12,5 @@ set smartcase
 
 " set lazyredraw
 set showcmd
+
+set mouse=a
