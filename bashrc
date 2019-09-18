@@ -118,4 +118,4 @@ fi
 
 alias python=python3
 alias pip=pip3
-alias xclip=xclip -sel clip
+alias xclip="xclip -sel clip"
