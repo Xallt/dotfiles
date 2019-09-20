@@ -1,0 +1,1 @@
+/home/xallt/.dotfiles/vim/autoload/plug.vim

@@ -1,7 +1,14 @@
+if filereadable(expand("~/.vimrc.plug"))
+	source ~/.vimrc.plug
+endif
+
+filetype off
+filetype plugin indent on
+
+
 set number
 set tabstop=4
 set softtabstop=4
-set showmatch
 set autoindent
 
 " Search (/ or ?) settings
