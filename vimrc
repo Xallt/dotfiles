@@ -10,6 +10,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -18,7 +19,7 @@ filetype plugin indent on
 
 " Editor extensions
 set number
-set cursorline
+"set cursorline
 
 " Indentation
 set tabstop=4
@@ -37,10 +38,11 @@ set smartcase
 " set lazyredraw
 set showcmd
 set wildmenu
+inoremap <S-Tab> <C-n>
 
 set mouse=a
-colorscheme molokai
-let g:airline_theme='molokai'
+colorscheme dracula
+let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
 set encoding=UTF-8
 
@@ -59,6 +61,9 @@ inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
+inoremap () ()
+inoremap [] []
+inoremap {} {}
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
