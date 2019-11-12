@@ -2,11 +2,36 @@ call plug#begin('~/.vim/plugged')
 " Plugins
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+    let g:airline_theme='dracula'
+    let g:airline_powerline_fonts=1
+    let g:airline_skip_empty_sections = 1
+
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdcommenter'
+
 Plug 'lervag/vimtex'
-Plug 'SirVer/ultisnips'
+    let g:vimtex_quickfix_latexlog = {'default' : 0}
+    let g:tex_flavor = 'latex'
+    let g:vimtex_view_method = 'zathura'
+
+    if !exists('g:ycm_semantic_triggers')
+        let g:ycm_semantic_triggers = {}
+    endif
+    au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+
 Plug 'ycm-core/YouCompleteMe'
+    let g:ycm_complete_in_strings = 0
+    let g:ycm_key_list_select_completion = []
+
+Plug 'tpope/vim-surround'
+
+Plug 'SirVer/ultisnips'
+    let g:UltiSnipsExpandTrigger = '<tab>'
+    let g:UltiSnipsJumpForwardTrigger = '<tab>'
+    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+Plug 'honza/vim-snippets'
+Plug 'jiangmiao/auto-pairs'
 
 " Colorshemes
 Plug 'dracula/vim'
@@ -17,71 +42,28 @@ if empty(v:servername) && exists('*remote_startserver')
   call remote_startserver('VIM')
 endif
 
-filetype off
-filetype plugin indent on
-
-" Editor look
-set number
-let &t_SI.="\e[5 q" "SI = INSERT mode
-let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-colorscheme dracula
-
-" Indentation
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-filetype indent on
-
-" Search settings
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set mouse=a
-
-" set lazyredraw
-set showcmd
-set wildmenu
-inoremap <S-Tab> <C-n>
-
-" vim-airline configuration
-let g:airline_theme='dracula'
-let g:airline_powerline_fonts=1
-let g:airline_skip_empty_sections = 1
-set encoding=UTF-8
-
-" Movement
-nnoremap j gj
-nnoremap k gk
+set runtimepath+=~/.vim_modules
+" Default nice configurations
+source $HOME/.vim_modules/defaults.vim
+augroup tex_group
+    autocmd!
+    autocmd FileType tex source $HOME/.vim_modules/tex.vim
+augroup END
 
 " Custom commands
 command Cdc cd %:p:h
-command Xclip silent "!cat %:p | xclip -sel clip"
+command Xclip silent exec "!cat %:p | xclip -sel clip" | redraw!
 
-" Comfy mappings 
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap () ()
-inoremap [] []
-inoremap {} {}
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-vmap > >gv
-vmap < <gv
-
-" Vim mappings
+" Leader mappings
+let mapleader = "\\"
 let maplocalleader = ","
 
-" Vimtex configuration
-let g:tex_flavor = 'latex'
-let g:vimtex_view_method = 'zathura'
-if !exists('g:ycm_semantic_triggers')
-let g:ycm_semantic_triggers = {}
-endif
-au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+" No arrow keys for you now hahahaaaaaa
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
