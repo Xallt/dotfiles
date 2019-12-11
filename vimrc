@@ -1,12 +1,13 @@
 call plug#begin('~/.vim/plugged')
 " Plugins
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
     let g:airline_theme='dracula'
     let g:airline_powerline_fonts=1
     let g:airline_skip_empty_sections = 1
 
-Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'lervag/vimtex'
@@ -38,6 +39,9 @@ Plug 'dracula/vim'
 
 call plug#end()
 
+colorscheme dracula
+set shell=/bin/bash
+
 if empty(v:servername) && exists('*remote_startserver')
   call remote_startserver('VIM')
 endif
@@ -49,14 +53,38 @@ augroup tex_group
     autocmd!
     autocmd FileType tex source $HOME/.vim_modules/tex.vim
 augroup END
+augroup cpp_group
+    autocmd!
+    autocmd FileType cpp source $HOME/.vim_modules/cpp.vim
+augroup END
 
 " Custom commands
 command Cdc cd %:p:h
 command Xclip silent exec "!cat %:p | xclip -sel clip" | redraw!
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Leader mappings
 let mapleader = "\\"
 let maplocalleader = ","
+
+" Command mode without pressing Shift
+nnoremap ; :
+vnoremap ; :
+nnoremap : <Nop>
+
+" Indenting selection
+vnoremap > >gv
+vnoremap < <gv
+
+" In insert or command mode, move normally by using Ctrl
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
 
 " No arrow keys for you now hahahaaaaaa
 noremap <Up> <Nop>

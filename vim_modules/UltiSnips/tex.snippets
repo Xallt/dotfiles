@@ -1,4 +1,15 @@
 # My custom LaTeX snippets
 snippet task "Task section" b
 \\section*{Задание ${1:X}}
+${0}
+endsnippet
+
+snippet chtd "ЧТД" b
+\\textbf{ЧТД.}
+endsnippet
+
+snippet ans "Ответ: ..." b
+\\[
+	\\text{Ответ:\quad} ${1:${VISUAL}}
+\\]
 endsnippet
