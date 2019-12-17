@@ -1,0 +1,8 @@
+#include ".Xresources.d/base16-dracula.Xresources"
+
+! xterm
+xterm*faceName:   Hack
+xterm*utf8:   2
+xterm*translations: #override \
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
