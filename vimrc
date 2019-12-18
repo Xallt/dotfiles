@@ -72,16 +72,6 @@ nnoremap : <Nop>
 vnoremap > >gv
 vnoremap < <gv
 
-" In insert or command mode, move normally by using Ctrl
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
-cnoremap <C-h> <Left>
-cnoremap <C-j> <Down>
-cnoremap <C-k> <Up>
-cnoremap <C-l> <Right>
-
 " No arrow keys for you now hahahaaaaaa
 noremap <Up> <Nop>
 noremap <Down> <Nop>

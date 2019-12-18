@@ -25,7 +25,10 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" Default features
 set mouse=a
+set backspace=indent,eol,start
 
 " set lazyredraw
 set showcmd
