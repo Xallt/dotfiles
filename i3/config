@@ -7,11 +7,17 @@ font pango:Roboto Mono, Awesome
 
 # TODO: figure out what this thing does and whether I need it
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-default_border pixel 3
+default_border pixel 1
+
+for_window [class="Blueman-manager$"] floating enable
+for_window [class="Nautilus$"] floating enable
+for_window [class="TelegramDesktop$"] floating enable
 
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id cbatticon
+exec --no-startup-id telegram-desktop -startintray
+exec xautolock -detectsleep -time 3 -locker "betterlockscreen -l"
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
@@ -116,31 +122,41 @@ bindsym $super+Shift+8 move container to workspace number $ws8
 bindsym $super+Shift+9 move container to workspace number $ws9
 bindsym $super+Shift+0 move container to workspace number $ws10
 
-# reload the configuration file
-bindsym $super+Shift+c reload
+# Colors set from ~/.Xresources
+set_from_resource $background background
+set_from_resource $foreground foreground
+set_from_resource $color0  color0
+set_from_resource  $color1  color1
+set_from_resource  $color2  color2
+set_from_resource  $color3  color3
+set_from_resource  $color4  color4
+set_from_resource  $color5  color5
+set_from_resource  $color6  color6
+set_from_resource $color7  color7
+set_from_resource $color8  color8
+set_from_resource $color9  color9
+set_from_resource $color10 color10
+set_from_resource $color11 color11
+set_from_resource $color12 color12
+set_from_resource $color13 color13
+set_from_resource $color14 color14
+set_from_resource $color15 color15
+
+# Theme colors
+# class                 border   backgr.  text     indic.   child_border
+# My colors
+client.background $background
+
+client.focused          $foreground $background $foreground $foreground  $foreground
+client.unfocused        $foreground $background $foreground $color8  $color8
+client.focused_inactive $foreground $background $foreground $color8  $color8
+client.urgent  $foreground $background $foreground $color8  $color8
+client.placeholder $foreground $background $foreground $color8  $color8
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
-bindsym $super+r mode "resize"
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-        
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $super+r mode "default"
-}
 
 exec_always ~/.i3/polybar.sh &
 exec feh --bg-scale ~/.i3/wallpaper.jpg

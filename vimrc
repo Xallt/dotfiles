@@ -33,6 +33,7 @@ Plug 'SirVer/ultisnips'
 
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+Plug 'chrisbra/Colorizer'
 
 " Colorshemes
 Plug 'dracula/vim'

@@ -1,9 +1,10 @@
-#include ".Xresources.d/base16-dracula.Xresources"
+#include ".Xresources.d/dracula.Xresources"
 
 ! xterm
-xterm*faceName: Hack, Font Awesome 5 Free Regular
+xterm*faceName: Hack, Font Awesome 5 Free
 xterm*faceSize:   11
 xterm*utf8:   2
 xterm*translations: #override \
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+xterm*termName: xterm-256color
