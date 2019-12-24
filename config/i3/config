@@ -12,12 +12,13 @@ default_border pixel 1
 for_window [class="Blueman-manager$"] floating enable
 for_window [class="Nautilus$"] floating enable
 for_window [class="TelegramDesktop$"] floating enable
+for_window [class="Mousepad$"] floating enable
 
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id cbatticon
 exec --no-startup-id telegram-desktop -startintray
-exec xautolock -detectsleep -time 3 -locker "betterlockscreen -l"
+exec xautolock -detectsleep -time 10 -locker "betterlockscreen -l"
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status

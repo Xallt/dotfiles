@@ -1,7 +1,7 @@
-#include ".Xresources.d/dracula.Xresources"
+#include ".Xresources.d/base16-google-dark-256.Xresources"
 
 ! xterm
-xterm*faceName: Hack, Font Awesome 5 Free
+xterm*faceName: Hack
 xterm*faceSize:   11
 xterm*utf8:   2
 xterm*translations: #override \
