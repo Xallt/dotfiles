@@ -5,8 +5,6 @@ set $alt Mod1
 # Font
 font pango:Roboto Mono, Awesome
 
-# TODO: figure out what this thing does and whether I need it
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 default_border pixel 1
 
 for_window [class="Blueman-manager$"] floating enable
@@ -26,7 +24,8 @@ exec --no-startup-id telegram-desktop -startintray
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master 0
-
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 # Add brightness control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d intel_backlight s +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d intel_backlight s 10%-
@@ -49,10 +48,10 @@ bindsym $alt+F2 exec --no-startup-id rofi -show run
 
 
 # change focus
-bindsym $super+j focus left
-bindsym $super+k focus down
-bindsym $super+l focus up
-bindsym $super+semicolon focus right
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $super+Left focus left
@@ -61,10 +60,10 @@ bindsym $super+Up focus up
 bindsym $super+Right focus right
 
 # move focused window
-bindsym $super+Shift+j move left
-bindsym $super+Shift+k move down
-bindsym $super+Shift+l move up
-bindsym $super+Shift+semicolon move right
+bindsym $super+Shift+h move left
+bindsym $super+Shift+j move down
+bindsym $super+Shift+k move up
+bindsym $super+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $super+Shift+Left move left
@@ -72,9 +71,8 @@ bindsym $super+Shift+Down move down
 bindsym $super+Shift+Up move up
 bindsym $super+Shift+Right move right
 
-# split in horizontal/vertical orientation
-bindsym $super+h split h
-bindsym $super+v split v
+bindsym $super+v split vertical
+bindsym $super+b split horizontal
 
 # enter fullscreen mode for the focused container
 bindsym $super+f fullscreen toggle

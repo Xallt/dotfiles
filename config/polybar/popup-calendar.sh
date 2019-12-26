@@ -6,6 +6,10 @@ YAD_WIDTH=222  # 222 is minimum possible value
 YAD_HEIGHT=193 # 193 is minimum possible value
 DATE=$(date +"%a %d %H:%M")
 
+POPUP=
+
+
+
 case "$1" in
 --popup)
     if [ "$(xdotool getwindowfocus getwindowname)" = "yad-calendar" ]; then
@@ -36,6 +40,9 @@ case "$1" in
         --title="yad-calendar" --borders=0 >/dev/null &
     ;;
 *)
+    if [[ -n $1 ]]; then
+        DATE=$( date "+$1" )
+    fi
     echo "$DATE"
     ;;
 esac
