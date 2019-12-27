@@ -14,6 +14,7 @@ for_window [class="Mousepad$"] floating enable
 for_window [class="Shutter$"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="Todour$"] floating enable
+for_window [class="Dconf-editor$"] floating enable
 
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
@@ -37,7 +38,7 @@ bindsym --release $super+Print exec scrot -o -s -l style=solid /tmp/screenshot.p
 floating_modifier $super
 
 # start a terminal
-bindsym $super+Return exec i3-sensible-terminal
+bindsym $super+Return exec i3-sensible-terminal zsh
 
 # kill focused window
 bindsym $super+Shift+q kill
