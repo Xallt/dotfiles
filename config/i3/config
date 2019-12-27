@@ -38,7 +38,7 @@ bindsym --release $super+Print exec scrot -o -s -l style=solid /tmp/screenshot.p
 floating_modifier $super
 
 # start a terminal
-bindsym $super+Return exec i3-sensible-terminal zsh
+bindsym $super+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $super+Shift+q kill
