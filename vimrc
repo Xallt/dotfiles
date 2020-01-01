@@ -32,6 +32,7 @@ Plug 'SirVer/ultisnips'
     let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 Plug 'honza/vim-snippets'
+Plug 'OmniSharp/omnisharp-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/Colorizer'
 
