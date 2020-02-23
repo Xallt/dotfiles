@@ -21,6 +21,7 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="Todour$"] floating enable
 for_window [class="Dconf-editor$"] floating enable
 for_window [class="discord$"] floating enable
+for_window [class="Eog$"] floating enable
 
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
@@ -38,7 +39,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d intel_backligh
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d intel_backlight s 5%-
 
 # Rectangular printscreen
-bindsym --release $super+Print exec scrot -o -s -l style=solid /tmp/screenshot.png && xclip -sel clipboard -t image/png -i /tmp/screenshot.png
+bindsym --release $super+Print exec scrot -o -f -s -l style=solid /tmp/screenshot.png && xclip -sel clipboard -t image/png -i /tmp/screenshot.png
+bindsym --release Shift+Print exec scrot -f /home/xallt/Pictures/screenshot.png
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
@@ -170,8 +172,8 @@ client.background $background
 client.focused          $foreground $background $foreground $foreground  $foreground
 client.unfocused        $foreground $background $foreground $color8  $color8
 client.focused_inactive $foreground $background $foreground $color8  $color8
-client.urgent  $foreground $background $foreground $color8  $color8
-client.placeholder $foreground $background $foreground $color8  $color8
+client.urgent           $foreground $background $foreground $color8  $color8
+client.placeholder      $foreground $background $foreground $color8  $color8
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart

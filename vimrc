@@ -32,7 +32,6 @@ Plug 'SirVer/ultisnips'
     let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 Plug 'honza/vim-snippets'
-Plug 'OmniSharp/omnisharp-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/Colorizer'
 
@@ -47,6 +46,7 @@ set shell=/bin/bash
 set runtimepath+=~/.vim_modules
 " Default nice configurations
 source $HOME/.vim_modules/defaults.vim
+source $HOME/.vim_modules/mappings.vim
 augroup tex_group
     autocmd!
     autocmd FileType tex source $HOME/.vim_modules/tex.vim

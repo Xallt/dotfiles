@@ -4,7 +4,7 @@ snippet task "Task section" b
 ${0}
 endsnippet
 
-snippet chtd "ЧТД" b
+snippet chtd "ЧТД"
 \\textbf{ЧТД.}
 endsnippet
 
@@ -13,3 +13,10 @@ snippet ans "Ответ: ..." b
 	\\text{Ответ:\quad} ${1:${VISUAL}}
 \\]
 endsnippet
+
+snippet img "Insert image" b
+\\begin{figure}[h]
+	\\includegraphics*[width=${1:200pt}]{${0}}
+\\end{figure}
+endsnippet
+

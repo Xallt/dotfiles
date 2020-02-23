@@ -8,8 +8,6 @@ DATE=$(date +"%a %d %H:%M")
 
 POPUP=
 
-
-
 case "$1" in
 --popup)
     if [ "$(xdotool getwindowfocus getwindowname)" = "yad-calendar" ]; then
