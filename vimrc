@@ -28,8 +28,6 @@ Plug 'tpope/vim-surround'
 
 Plug 'SirVer/ultisnips'
     let g:UltiSnipsExpandTrigger = '<tab>'
-    let g:UltiSnipsJumpForwardTrigger = '<tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
