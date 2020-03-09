@@ -29,6 +29,7 @@ set smartcase
 " Default features
 set mouse=a
 set backspace=indent,eol,start
+set completeopt-=preview
 
 " set lazyredraw
 set showcmd
