@@ -36,5 +36,9 @@ set showcmd
 set wildmenu
 
 " History saving
-set undofile
-set undodir=~/.vim/undodir
+if has('persistent_undo')
+    set undofile
+    let myUndoDir = expand('$HOME/.vim' . '/undodir')
+    call system('mkdir -p ' . myUndoDir)
+    let &undodir = myUndoDir
+endif

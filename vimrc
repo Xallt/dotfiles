@@ -8,7 +8,6 @@ Plug 'vim-airline/vim-airline-themes'
     let g:airline_powerline_fonts=1
     let g:airline_skip_empty_sections = 1
 
-Plug 'scrooloose/nerdcommenter'
 
 Plug 'lervag/vimtex'
     let g:vimtex_quickfix_latexlog = {'default' : 0}
@@ -28,10 +27,18 @@ Plug 'tpope/vim-surround'
 
 Plug 'SirVer/ultisnips'
     let g:UltiSnipsExpandTrigger = '<tab>'
+    let g:UltiSnipsJumpForwardTrigger = "<tab>"
+    let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
+Plug 'jeetsukumaran/vim-pythonsense'
 
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
 Plug 'chrisbra/Colorizer'
+Plug 'OmniSharp/omnisharp-vim'
 
 " Colorshemes
 Plug 'dracula/vim'
