@@ -1,0 +1,112 @@
+{
+    "vim.easymotion": true,
+    "vim.surround": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.cursorStylePerMode.replace": "underline",
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [";"],
+            "after": [":"]
+        },
+        {
+            "before": [":"],
+            "after": ["<Nop>"]
+        },
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+        {
+            "before": ["L"],
+            "after": ["$"]
+        },
+        {
+            "before": ["v"],
+            "after": ["v", "l", "h"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [";"],
+            "after": [":"]
+        },
+        {
+            "before": [":"],
+            "after": ["<Nop>"]
+        },
+        {
+            "before" : ["<"],
+            "after" : ["<", "g", "v"]
+        },
+        {
+            "before" : [">"],
+            "after" : [">", "g", "v"]
+        },
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+        {
+            "before": ["L"],
+            "after": ["$"]
+        }
+    ],
+    "vim.leader": "\\",
+    "vim.gdefault": true,
+    "vim.foldfix": true,
+    "vim.handleKeys": {
+        "<C-b>": false,
+        "<C-w>": false,
+        "<C-k>": false,
+    },
+
+    "workbench.colorTheme": "Monokai",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#851894",
+        "statusBar.noFolderBackground": "#851894",
+        "statusBar.debuggingBackground": "#851894"
+    },
+    "workbench.list.automaticKeyboardNavigation": false,
+    "workbench.iconTheme": "material-icon-theme",
+
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+
+    "window.enableMenuBarMnemonics": false,
+    "window.titleBarStyle": "custom",
+    "window.zoomLevel": 0,
+
+    "editor.formatOnType": true,
+    "editor.tabCompletion": "on",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.acceptSuggestionOnEnter": "off",
+
+    "latex-workshop.latex.clean.fileTypes": [
+        "*/*.aux",
+        "*/*.gz",
+        "*/*.bbl",
+        "*/*.blg",
+        "*/*.idx",
+        "*/*.ind",
+        "*/*.lof",
+        "*/*.lot",
+        "*/*.out",
+        "*/*.toc",
+        "*/*.acn",
+        "*/*.acr",
+        "*/*.alg",
+        "*/*.glg",
+        "*/*.glo",
+        "*/*.gls",
+        "*/*.fls",
+        "*/*.log",
+        "*/*.fdb_latexmk",
+        "*/*.snm",
+        "*/*.synctex(busy)",
+        "*/*.synctex.gz(busy)",
+        "*/*.nav"
+    ]
+}

@@ -8,7 +8,6 @@ Plug 'vim-airline/vim-airline-themes'
     let g:airline_powerline_fonts=1
     let g:airline_skip_empty_sections = 1
 
-
 Plug 'lervag/vimtex'
     let g:vimtex_quickfix_latexlog = {'default' : 0}
     let g:tex_flavor = 'latex'
@@ -22,6 +21,8 @@ Plug 'lervag/vimtex'
 Plug 'ycm-core/YouCompleteMe'
     let g:ycm_complete_in_strings = 0
     let g:ycm_key_list_select_completion = []
+    let g:ycm_auto_hover = ''
+    nmap <leader>D <plug>(YCMHover)
 
 Plug 'tpope/vim-surround'
 
@@ -39,6 +40,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chrisbra/Colorizer'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'mhinz/vim-startify'
+Plug 'psliwka/vim-smoothie'
+Plug 'michaeljsmith/vim-indent-object'
 
 " Colorshemes
 Plug 'dracula/vim'

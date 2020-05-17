@@ -20,6 +20,10 @@ set expandtab
 set autoindent
 filetype indent on
 
+" Folding
+set foldmethod=syntax
+set nofoldenable
+
 " Search settings
 set hlsearch
 set incsearch
