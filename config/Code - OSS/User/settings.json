@@ -27,6 +27,10 @@
         {
             "before": ["v"],
             "after": ["v", "l", "h"]
+        },
+        {
+            "before": ["<space>"],
+            "commands": [":nohl"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -118,4 +122,15 @@
     ],
 
     "explorer.confirmDelete": false,
+
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "todo-tree.tree.showScanModeButton": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "C_Cpp.updateChannel": "Insiders",
 }
