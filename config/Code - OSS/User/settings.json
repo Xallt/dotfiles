@@ -66,6 +66,7 @@
         "<C-b>": false,
         "<C-w>": false,
         "<C-k>": false,
+        "<C-f>": false,
     },
     "vim.easymotionMarkerHeight": 16,
     "vim.easymotionMarkerWidthPerChar": 6,
@@ -78,8 +79,6 @@
     },
     "workbench.list.automaticKeyboardNavigation": false,
     "workbench.iconTheme": "material-icon-theme",
-
-    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
 
     "window.enableMenuBarMnemonics": false,
     "window.titleBarStyle": "custom",
@@ -125,12 +124,21 @@
 
     "emmet.triggerExpansionOnTab": true,
     "emmet.showSuggestionsAsSnippets": true,
+
     "files.exclude": {
         "**/node_modules": true
     },
+
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "todo-tree.tree.showScanModeButton": false,
+
     "git.autofetch": true,
     "git.confirmSync": false,
+
     "C_Cpp.updateChannel": "Insiders",
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pycodestyleArgs": ["--max-line-length=1000"],
+
+    "autoDocstring.docstringFormat": "sphinx",
 }
