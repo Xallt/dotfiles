@@ -1,5 +1,7 @@
 [user]
-	name = Mitya Shabat
+	name = Xallt
 	email = mitya.shabat@gmail.com
 [core]
 	editor = vim
+[cola]
+	spellcheck = false

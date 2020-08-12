@@ -12,14 +12,13 @@ font pango:Roboto Mono, Awesome
 default_border pixel 1
 hide_edge_borders both
 
+# Floating windows for some random applications
 for_window [class="Blueman-manager$"] floating enable
 for_window [class="Nautilus$"] floating enable
 for_window [class="TelegramDesktop$"] floating enable
 for_window [class="Mousepad$"] floating enable
 for_window [class="Shutter$"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
-for_window [class="Todour$"] floating enable
-for_window [class="Dconf-editor$"] floating enable
 for_window [class="discord$"] floating enable
 for_window [class="Eog$"] floating enable
 
