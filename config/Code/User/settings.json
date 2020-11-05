@@ -142,5 +142,9 @@
     "autoDocstring.docstringFormat": "sphinx",
     "sync.gist": "ab4d031af81b5088e0ad79bcf5eca8a2",
     "python.dataScience.sendSelectionToInteractiveWindow": true,
-    "python.formatting.autopep8Args": ["--max-line-length", "1000"]
+    "python.formatting.autopep8Args": [
+        "--max-line-length",
+        "1000"
+    ],
+    "todo-tree.tree.showScanModeButton": false
 }

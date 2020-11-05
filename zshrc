@@ -11,7 +11,7 @@ export ZSH="/home/xallt/.oh-my-zsh"
 ZSH_THEME="bira"
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-plugins=(git extract z systemd ssh-agent)
+plugins=(git extract z systemd ssh-agent vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 

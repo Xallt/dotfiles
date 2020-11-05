@@ -1,15 +1,24 @@
 call plug#begin('~/.vim/plugged')
 " Plugins
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'preservim/nerdtree'
+    let NERDTreeMinimalUI = 1
+    let NERDTreeDirArrows = 1
+    noremap <C-n> :NERDTreeToggle<cr>
+    noremap <C-e> :NERDTreeToggle<cr>
+    set modifiable
+Plug 'hankchiutw/nerdtree-ranger.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
     let g:airline_theme='dracula'
     let g:airline_powerline_fonts=1
     let g:airline_skip_empty_sections = 1
-
+Plug 'kien/ctrlp.vim'
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
+    let g:ctrlp_working_path_mode = 'ra'
 Plug 'lervag/vimtex'
-    let g:vimtex_quickfix_latexlog = {'default' : 0}
+    "let g:vimtex_quickfix_latexlog = {'default' : 0}
     let g:tex_flavor = 'latex'
     let g:vimtex_view_method = 'zathura'
 
@@ -55,7 +64,6 @@ set shell=/bin/bash
 set runtimepath+=~/.vim_modules
 " Default nice configurations
 source $HOME/.vim_modules/defaults.vim
-source $HOME/.vim_modules/mappings.vim
 augroup tex_group
     autocmd!
     autocmd FileType tex source $HOME/.vim_modules/tex.vim
@@ -82,6 +90,10 @@ nnoremap : <Nop>
 " Indenting selection
 vnoremap > >gv
 vnoremap < <gv
+
+" Move to line edges
+noremap H ^
+noremap L $
 
 " No arrow keys for you now hahahaaaaaa
 noremap <Up> <Nop>

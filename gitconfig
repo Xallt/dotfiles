@@ -5,3 +5,5 @@
 	editor = vim
 [cola]
 	spellcheck = false
+[pull]
+	rebase = false
