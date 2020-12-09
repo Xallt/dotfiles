@@ -11,7 +11,7 @@ export ZSH="/home/xallt/.oh-my-zsh"
 ZSH_THEME="bira"
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-plugins=(git extract z systemd ssh-agent vi-mode)
+plugins=(git extract z systemd ssh-agent vi-mode zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -25,6 +25,7 @@ alias tb=taskbook
 alias xclip="xclip -sel clip"
 alias rd="rm -r"
 alias open="xdg-open"
+alias subl3='subl3 -a'
 
 # Pacman aliases
 alias pacs="sudo pacman -S"

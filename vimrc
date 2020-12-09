@@ -17,6 +17,7 @@ Plug 'kien/ctrlp.vim'
     let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_working_path_mode = 'ra'
+    let g:ctrlp_extensions = ['file', 'mru', 'line']
 Plug 'lervag/vimtex'
     "let g:vimtex_quickfix_latexlog = {'default' : 0}
     let g:tex_flavor = 'latex'
@@ -71,6 +72,10 @@ augroup END
 augroup cpp_group
     autocmd!
     autocmd FileType cpp source $HOME/.vim_modules/cpp.vim
+augroup END
+augroup c_group
+    autocmd!
+    autocmd FileType c source $HOME/.vim_modules/c.vim
 augroup END
 
 " Custom commands
