@@ -1,3 +1,5 @@
+set shell=/bin/bash
+
 syntax on
 filetype plugin indent on
 filetype on

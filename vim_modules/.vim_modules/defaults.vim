@@ -1,0 +1,1 @@
+/home/xallt/.dotfiles/vim_modules/defaults.vim
