@@ -37,3 +37,10 @@ alias pacr="sudo pacman -R"
 bindkey "^V" edit-command-line
 bindkey "^k" history-search-backward
 bindkey "^j" history-search-forward
+
+# The next line updates PATH for Yandex Cloud CLI.
+if [ -f '/home/xallt/yandex-cloud/path.bash.inc' ]; then source '/home/xallt/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/home/xallt/yandex-cloud/completion.zsh.inc' ]; then source '/home/xallt/yandex-cloud/completion.zsh.inc'; fi
+
