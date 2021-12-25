@@ -8,7 +8,7 @@ I'm using [rcm](https://github.com/thoughtbot/rcm) for my dotfile management
 
 1. Clone the repository
 ```bash
-git clone repository_link ~/.dotfiles
+git clone `repository_link` ~/.dotfiles
 ```
 2. While in your home directory:
 ```bash
