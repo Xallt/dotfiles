@@ -44,3 +44,7 @@ if [ -f '/home/xallt/yandex-cloud/path.bash.inc' ]; then source '/home/xallt/yan
 # The next line enables shell command completion for yc.
 if [ -f '/home/xallt/yandex-cloud/completion.zsh.inc' ]; then source '/home/xallt/yandex-cloud/completion.zsh.inc'; fi
 
+# CUDA
+export LD_LIBRARY_PATH="/opt/cuda/lib64:$LD_LIBRARY_PATH"
+export CUDA_HOME="/opt/cuda-10.2"
+
