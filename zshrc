@@ -11,7 +11,18 @@ export ZSH="/home/xallt/.oh-my-zsh"
 ZSH_THEME="bira"
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-plugins=(git extract z systemd ssh-agent vi-mode zsh-autosuggestions)
+plugins=(
+	git 
+	extract 
+	z 
+	systemd 
+	ssh-agent 
+	vi-mode 
+	zsh-autosuggestions
+	bgnotify
+)
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 
@@ -26,6 +37,10 @@ alias xclip="xclip -sel clip"
 alias rd="rm -r"
 alias open="xdg-open"
 alias subl3='subl3 -a'
+
+# Python aliases
+alias python=python3
+alias pip=pip3
 
 # Pacman aliases
 alias pacs="sudo pacman -S"
@@ -45,6 +60,23 @@ if [ -f '/home/xallt/yandex-cloud/path.bash.inc' ]; then source '/home/xallt/yan
 if [ -f '/home/xallt/yandex-cloud/completion.zsh.inc' ]; then source '/home/xallt/yandex-cloud/completion.zsh.inc'; fi
 
 # CUDA
-export LD_LIBRARY_PATH="/opt/cuda/lib64:$LD_LIBRARY_PATH"
-export CUDA_HOME="/opt/cuda-10.2"
+export CUDA_HOME="/usr/local/cuda"
+
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda-10.2/lib64:/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/xallt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/xallt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/xallt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/xallt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 

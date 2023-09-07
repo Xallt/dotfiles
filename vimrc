@@ -1,3 +1,9 @@
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 " Nerdtree file navigator (C-e to toggle view)
 Plug 'preservim/nerdtree'
@@ -37,11 +43,11 @@ Plug 'lervag/vimtex'
     au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 " General completion engine
-Plug 'ycm-core/YouCompleteMe'
-    let g:ycm_complete_in_strings = 0
-    let g:ycm_key_list_select_completion = []
-    let g:ycm_auto_hover = ''
-    nmap <leader>D <plug>(YCMHover)
+"Plug 'ycm-core/YouCompleteMe'
+    "let g:ycm_complete_in_strings = 0
+    "let g:ycm_key_list_select_completion = []
+    "let g:ycm_auto_hover = ''
+    "nmap <leader>D <plug>(YCMHover)
 
 " Keybindings for surrounding with brackets
 Plug 'tpope/vim-surround'
@@ -53,11 +59,11 @@ Plug 'SirVer/ultisnips'
     let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Python auto-indent
-Plug 'Vimjas/vim-python-pep8-indent'
+" Plug 'Vimjas/vim-python-pep8-indent'
 " JEDI python autocompletion engine
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 " Vim motions and text objects for Python classes, methods, functions, etc.
-Plug 'jeetsukumaran/vim-pythonsense'
+" Plug 'jeetsukumaran/vim-pythonsense'
 
 " Default snippets for various programming languages
 Plug 'honza/vim-snippets'
@@ -76,7 +82,7 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'mhinz/vim-startify'
 
 " Smooth scrolling on C-d/C-u
-Plug 'psliwka/vim-smoothie'
+"Plug 'psliwka/vim-smoothie'
 " Text object wrapping lines of code with same indent
 Plug 'michaeljsmith/vim-indent-object'
 
