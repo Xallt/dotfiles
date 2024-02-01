@@ -63,20 +63,26 @@ if [ -f '/home/xallt/yandex-cloud/completion.zsh.inc' ]; then source '/home/xall
 export CUDA_HOME="/usr/local/cuda"
 
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda-10.2/lib64:/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/local/cuda-10.2/lib64:/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/xallt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/media/xallt/HardDrive/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/xallt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/xallt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/media/xallt/HardDrive/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/media/xallt/HardDrive/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/xallt/anaconda3/bin:$PATH"
+        export PATH="/media/xallt/HardDrive/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Install gems without root
+export GEM_HOME=$HOME/.gem
+export PATH=$PATH:$HOME/.gem/bin
+export PATH=$PATH:/media/xallt/HardDrive/miniconda3/bin
+
+eval "$(atuin init zsh)"
