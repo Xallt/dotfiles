@@ -63,7 +63,12 @@ if [ -f '/home/xallt/yandex-cloud/completion.zsh.inc' ]; then source '/home/xall
 export CUDA_HOME="/usr/local/cuda"
 
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/local/cuda-10.2/lib64:/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+export LD_LIBRARY_PATH="/usr/local/cuda-10.2:${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH="/usr/local/cuda-11.0/lib64:${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH="/usr/local/cuda-12.2/lib64:${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH="/usr/local/cuda-12.2/targets/x86_64-linux/lib:${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -84,5 +89,6 @@ unset __conda_setup
 export GEM_HOME=$HOME/.gem
 export PATH=$PATH:$HOME/.gem/bin
 export PATH=$PATH:/media/xallt/HardDrive/miniconda3/bin
+export PATH=$PATH:$HOME/.cargo/bin
 
-eval "$(atuin init zsh)"
+
