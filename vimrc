@@ -5,14 +5,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-" Nerdtree file navigator (C-e to toggle view)
-Plug 'preservim/nerdtree'
-    let NERDTreeMinimalUI = 1
-    let NERDTreeDirArrows = 1
-    noremap <C-e> :NERDTreeToggle<cr>
-    set modifiable
-" Ranger-like navigation in nerdtree
-Plug 'hankchiutw/nerdtree-ranger.vim'
+" nerdtree file navigator (c-e to toggle view)
 
 " Easy moving through file (<leader><leader><motion>)
 Plug 'easymotion/vim-easymotion'
@@ -24,13 +17,6 @@ Plug 'vim-airline/vim-airline-themes'
     let g:airline_powerline_fonts=1
     let g:airline_skip_empty_sections = 1
 
-" File fuzzy search (C-p to open, C-b/C-f to change modes)
-Plug 'kien/ctrlp.vim'
-    let g:ctrlp_map = '<c-p>'
-    let g:ctrlp_cmd = 'CtrlP'
-    let g:ctrlp_working_path_mode = 'ra'
-    let g:ctrlp_extensions = ['file', 'mru', 'line']
-
 " LaTeX integration with vim (autocompletion, live update)
 Plug 'lervag/vimtex'
     "let g:vimtex_quickfix_latexlog = {'default' : 0}
@@ -41,14 +27,6 @@ Plug 'lervag/vimtex'
         let g:ycm_semantic_triggers = {}
     endif
     au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
-
-" General completion engine
-"Plug 'ycm-core/YouCompleteMe'
-    "let g:ycm_complete_in_strings = 0
-    "let g:ycm_key_list_select_completion = []
-    "let g:ycm_auto_hover = ''
-    "nmap <leader>D <plug>(YCMHover)
-
 " Keybindings for surrounding with brackets
 Plug 'tpope/vim-surround'
 
@@ -57,13 +35,6 @@ Plug 'SirVer/ultisnips'
     let g:UltiSnipsExpandTrigger = '<tab>'
     let g:UltiSnipsJumpForwardTrigger = "<tab>"
     let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" Python auto-indent
-" Plug 'Vimjas/vim-python-pep8-indent'
-" JEDI python autocompletion engine
-" Plug 'davidhalter/jedi-vim'
-" Vim motions and text objects for Python classes, methods, functions, etc.
-" Plug 'jeetsukumaran/vim-pythonsense'
 
 " Default snippets for various programming languages
 Plug 'honza/vim-snippets'
@@ -74,17 +45,6 @@ Plug 'scrooloose/nerdcommenter'
 
 " Paint color codes
 Plug 'chrisbra/Colorizer'
-
-" C# completion engine
-Plug 'OmniSharp/omnisharp-vim'
-
-" Vim starting screen
-Plug 'mhinz/vim-startify'
-
-" Smooth scrolling on C-d/C-u
-"Plug 'psliwka/vim-smoothie'
-" Text object wrapping lines of code with same indent
-Plug 'michaeljsmith/vim-indent-object'
 
 " Colorshemes
 Plug 'dracula/vim'
@@ -97,22 +57,6 @@ call plug#end()
 
 
 colorscheme dracula
-
-set runtimepath+=~/.vim_modules
-" Personalized file-specific configurations
-source $HOME/.vim_modules/defaults.vim
-augroup tex_group
-    autocmd!
-    autocmd FileType tex source $HOME/.vim_modules/tex.vim
-augroup END
-augroup cpp_group
-    autocmd!
-    autocmd FileType cpp source $HOME/.vim_modules/cpp.vim
-augroup END
-augroup c_group
-    autocmd!
-    autocmd FileType c source $HOME/.vim_modules/c.vim
-augroup END
 
 " Custom commands
 command Xclip silent exec "!cat %:p | xclip -sel clip" | redraw!
@@ -134,3 +78,55 @@ vnoremap < <gv
 " Move to line edges
 noremap H ^
 noremap L $
+
+set shell=/bin/bash
+
+syntax on
+filetype plugin indent on
+filetype on
+filetype plugin on
+filetype indent on
+set encoding=UTF-8
+
+" Editor look
+set number relativenumber
+set wrap lbr
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+" Indentation
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+filetype indent on
+
+" Folding
+set foldmethod=syntax
+set nofoldenable
+
+" Search settings
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Default features
+set mouse=a
+set backspace=indent,eol,start
+set completeopt-=preview
+
+" set lazyredraw
+set showcmd
+set wildmenu
+
+" History saving
+if has('persistent_undo')
+    set undofile
+    let myUndoDir = expand('$HOME/.vim' . '/undodir')
+    call system('mkdir -p ' . myUndoDir)
+    let &undodir = myUndoDir
+endif
+
