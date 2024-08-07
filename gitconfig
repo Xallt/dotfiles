@@ -14,3 +14,4 @@
 	required = true
 [safe]
 	directory = /media/xallt/HardDrive/Vaults
+	directory = /media/xallt/HardDrive/Vaults/Zettelkasten/.obsidian/plugins/sync-graph-settings

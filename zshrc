@@ -1,5 +1,5 @@
 # Environment variables
-export PATH="/home/xallt/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/xallt/.vimpkg/bin"
+export PATH="/home/xallt/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/xallt/.vimpkg/bin:/opt/nvim-linux64/bin"
 export EDITOR=vim
 
 # Path to your oh-my-zsh installation.
@@ -38,6 +38,8 @@ alias rd="rm -r"
 alias open="xdg-open"
 alias subl3='subl3 -a'
 
+alias vim=nvim
+
 # Python aliases
 alias python=python3
 alias pip=pip3
@@ -72,14 +74,14 @@ export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/media/xallt/HardDrive/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/xallt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/media/xallt/HardDrive/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/media/xallt/HardDrive/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/xallt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/xallt/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/media/xallt/HardDrive/miniconda3/bin:$PATH"
+        export PATH="/home/xallt/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -91,4 +93,9 @@ export PATH=$PATH:$HOME/.gem/bin
 export PATH=$PATH:/media/xallt/HardDrive/miniconda3/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
-
+# Source nerfstudio autocompletions.
+if ! command -v compdef &> /dev/null; then
+    autoload -Uz compinit
+    compinit
+fi
+source /media/xallt/HardDrive/.virtualenv/python38/lib/python3.8/site-packages/nerfstudio/scripts/completions/setup.zsh
